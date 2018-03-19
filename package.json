@@ -1,0 +1,30 @@
+{
+  "name": "flightpath-backend",
+  "version": "0.0.1",
+  "description": "Backend PostgreSQL service for Flight Path",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheMoonMoth/FlightPath-backend.git"
+  },
+  "author": "Kyle Weintraub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheMoonMoth/FlightPath-backend/issues"
+  },
+  "homepage": "https://github.com/TheMoonMoth/FlightPath-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "knex": "^0.14.4",
+    "pg": "^7.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
