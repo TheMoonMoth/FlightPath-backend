@@ -1,8 +1,8 @@
 const database = require("./dbconnection.js");
 
 module.exports = {
-  list() {
-    return database("game").select();
+  listFeatures() {
+    return database("featured").select();
   },
   read(id) {
     return database("game")
