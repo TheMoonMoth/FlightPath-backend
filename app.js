@@ -1,12 +1,22 @@
+const queries = require("./queries");
+
 const express = require("express");
 const cors = require("cors");
-const app = express();
-const queries = require("./queries");
 const bodyParser = require("body-parser");
 
+const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+
+app.get("/tester", (req, res)=>{
+  queries
+    .listFeatures()
+    .then(features => {
+      res.json(features)
+    })
+    .catch(console.error)
+})
 app.post("/tester", (req, resp) => {
   resp.json(req.body);
 });
@@ -33,7 +43,7 @@ app.post("/xxx", (request, response) => {
   queries
     .create(request.body)
     .then(game => {
-      response.status(201).json({ game });
+      response.sendStatus(201).json({ game });
     })
     .catch(console.error);
 });
@@ -57,7 +67,7 @@ app.put("/xxx/:id", (request, response) => {
 });
 
 app.use((request, response) => {
-  response.send(404);
+  response.sendStatus(404);
 });
 
 module.exports = app;
