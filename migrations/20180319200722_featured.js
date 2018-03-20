@@ -3,8 +3,7 @@ exports.up = function(knex, Promise) {
     table.increments("id");
     table.text("title");
     table.text("author");
-    table.date(now);
-    table.text("body");
+    table.specificType("body", "text[]");
   });
 };
 
