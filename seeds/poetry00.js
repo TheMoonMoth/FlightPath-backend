@@ -39,7 +39,7 @@ exports.seed = function(knex, Promise) {
             "Across the sea of space, the stars are other suns.",
             "",
             "Spaceflights cannot be stopped.", 
-            "", 
+            "",
             "This is not the work", 
             "",
             "of any one man or even a group of men.",
