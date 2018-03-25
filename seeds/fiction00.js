@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
       return knex("fiction").insert([
         {
           id: 1,
-          title: "The Title",
+          title: "An Isolated Circumstance",
           author: "The Guy",
           body: [
             "That's one small step for [a] man, one giant leap for mankind.",

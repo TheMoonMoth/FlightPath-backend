@@ -28,15 +28,11 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 2,
-          title: "Padawan Malcom",
-          author: "DaShawn",
-          category: "Visual Art",
+          title: "Controlled Chaos",
+          author: "Jerology",
+          category: "Art",
           body: [
-            "Bazoolium cloud city the empire strikes back dantooine nanogenes alderaan. Firefly starbuck wyrwulf river jango fett sullust. Validium vader R2-D2 galactica, tatooine youngling krypter obi-wan x-wing psychic paper luke serenity. Padawan malcom cylon dynatrope maul return of the jedi. River jayne exterminate force bazoolium nanogenes speeder.",
-            "",
-            "Bazoolium cloud city the empire strikes back dantooine nanogenes alderaan. Firefly starbuck wyrwulf river jango fett sullust. Validium vader R2-D2 galactica, tatooine youngling krypter obi-wan x-wing psychic paper luke serenity. Padawan malcom cylon dynatrope maul return of the jedi. River jayne exterminate force bazoolium nanogenes speeder.",
-            "",
-            "Bazoolium cloud city the empire strikes back dantooine nanogenes alderaan. Firefly starbuck wyrwulf river jango fett sullust. Validium vader R2-D2 galactica, tatooine youngling krypter obi-wan x-wing psychic paper luke serenity. Padawan malcom cylon dynatrope maul return of the jedi. River jayne exterminate force bazoolium nanogenes speeder."
+            "https://thumbs.gfycat.com/DependentVictoriousCutworm-size_restricted.gif"
           ]
         },
         {
@@ -44,7 +40,9 @@ exports.seed = function(knex, Promise) {
           category: "Poetry",
           title: "Jethrik",
           author: "Grand Moff",
-          body: ["Alderaan antilles inara, ice gun battlestar saffron ackbar grand moff tarkin AT-AT starbuck. Biodamper obi-wan sitrep jelly babies, tardis galmonging doctor who. Bazoolium coruscant exterminate, R2-D2 sullust sitrep jelly babies crazy ivan rassilon wyrwulf sith jethrik. Grand moff tarkin antilles fodder, dantooine skywalker frak dagobah doctor who. Sitrep endor felgercarb bothan. Serenity nerf herder tylium ore blaster. R2-D2 frak nethersphere hoth starbuck sitrep dynatrope jedi mind trick coruscant AT-AT everlasting matches sith FTL youngling."]
+          body: [
+            "Alderaan antilles inara, ice gun battlestar saffron ackbar grand moff tarkin AT-AT starbuck. Biodamper obi-wan sitrep jelly babies, tardis galmonging doctor who. Bazoolium coruscant exterminate, R2-D2 sullust sitrep jelly babies crazy ivan rassilon wyrwulf sith jethrik. Grand moff tarkin antilles fodder, dantooine skywalker frak dagobah doctor who. Sitrep endor felgercarb bothan. Serenity nerf herder tylium ore blaster. R2-D2 frak nethersphere hoth starbuck sitrep dynatrope jedi mind trick coruscant AT-AT everlasting matches sith FTL youngling."
+          ]
         }
       ]);
     });
