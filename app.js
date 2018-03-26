@@ -48,6 +48,20 @@ app.get("/visualart", (req, res) => {
     .catch(console.error);
 });
 
+app.get("/all-submissions", (req, res)=>{
+  queries 
+    .listSubmissions()
+    .then(subs => res.json(subs))
+    .catch(console.error)
+})
+
+app.get("/all-submissions/:type", (req, res)=>{
+  queries
+    .listSubmissionsByType(req.params.type)
+    .then(subs => res.json(subs))
+    .catch(console.error)
+})
+
 app.get("/xxx/:id", (request, response) => {
   queries
     .read(request.params.id)

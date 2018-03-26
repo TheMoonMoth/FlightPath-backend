@@ -18,6 +18,14 @@ module.exports = {
   },
   listArt() {
     return database("visualart").select();
+  },
+  listSubmissions() {
+    return database("submissions").select();
+  },
+  listSubmissionsByType(type) {
+    return database("submissions")
+      .select()
+      .where("category", type)
   }
 };
 
