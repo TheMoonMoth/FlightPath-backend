@@ -34,9 +34,9 @@ const upload = multer({
       ext !== ".png" &&
       ext !== ".PNG" &&
       ext !== ".jpeg" &&
-      ext !== ".JPEG" 
+      ext !== ".JPEG"
     ) {
-      return cb(new Error("Unacceptable File Type"));
+      return cb(new Error("Unacceptable File Type"), false);
     }
     cb(null, true);
   },
@@ -50,9 +50,10 @@ const upload = multer({
 });
 
 app.post("/upload", upload.array("image", 1), (req, res) => {
-  res.json({
-    imageurl: `${req.files[0].location}`
-  });
+  res
+    .json({
+      imageurl: `${req.files[0].location}`
+    })
 });
 
 app.get("/featured", (req, res) => {

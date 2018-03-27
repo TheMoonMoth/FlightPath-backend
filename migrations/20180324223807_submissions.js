@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.text("author");
     table.text("url");
     table.specificType("tags", "integer[]");
+    table.text("cv");
   });
 };
 
