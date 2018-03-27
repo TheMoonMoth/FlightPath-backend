@@ -26,6 +26,12 @@ module.exports = {
     return database("submissions")
       .select()
       .where("category", type)
+  },
+  createSubmission(sub){
+    return database("submissions")
+      .insert(sub)
+      .returning("*")
+      .then(record => record[0])
   }
 };
 

@@ -5,6 +5,7 @@ exports.seed = function(knex, Promise) {
       return knex("submissions").insert([
         {
           id: 1,
+          email: "kyle@hotmail.com",
           category: "Fiction",
           title: "A Tale of Escape",
           author: "Kyle Weintraub",
@@ -15,6 +16,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 2,
+          email: "wein@gmail.com",
           category: "Fiction",
           title: "The New Britannica",
           author: "Kyle Weintraub",
@@ -25,6 +27,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 3,
+          email: "traub@aol.com",
           category: "Fiction",
           title: "One Cozy Ship",
           author: "Kyle Weintraub",
@@ -35,6 +38,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 4,
+          email: "kyle@yahoo.com",
           category: "Poetry",
           title: "Ze Cozmas",
           author: "Pierre LaRoix",
@@ -45,6 +49,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 5,
+          email: "style@hotmail.com",
           category: "Poetry",
           title: "Martian Cigarette",
           author: "Pierre LaRoix",
@@ -55,6 +60,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 6,
+          email: "pierre@gmail.com",
           category: "Poetry",
           title: "Grapes of Jupiter",
           author: "Pierre LaRoix",
@@ -65,6 +71,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 7,
+          email: "dango@aol.com",
           category: "Art",
           title: "The Gateway",
           author: "Rob Boss",
@@ -75,6 +82,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 8,
+          email: "beez@hotmail.com",
           category: "Art",
           title: "Happy Terreforms",
           author: "Rob Boss",
@@ -85,6 +93,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 9,
+          email: "pepper@hotmail.com",
           category: "Art",
           title: "Lonely Planet",
           author: "Rob Boss",
@@ -94,5 +103,8 @@ exports.seed = function(knex, Promise) {
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
         }
       ]);
+    })
+    .then(() => {
+      return knex.raw("ALTER SEQUENCE submissions_id_seq RESTART WITH 10;");
     });
 };

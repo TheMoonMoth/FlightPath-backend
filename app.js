@@ -56,6 +56,16 @@ app.post("/upload", upload.array("image", 1), (req, res) => {
     })
 });
 
+app.post("/submission", (req, res)=>{
+  console.log(req.body)
+  queries
+    .createSubmission(req.body)
+    .then(sub => {
+      res.json(sub);
+    })
+    .catch(console.error);
+})
+
 app.get("/featured", (req, res) => {
   queries
     .listFeatures()
