@@ -14,9 +14,9 @@ exports.seed = function(knex, Promise) {
         {
           id: 2,
           title: "The Moon",
-          artist: "A damn genius",
+          artist: "Nick Gindraux",
           url:
-            "https://i.pinimg.com/originals/9c/c8/ed/9cc8ed4baf1b3a0a8f8281b668b17745.jpg",
+            "http://www.igorstshirts.com/blog/conceptships/2015/nick_gindraux/nick_gindraux_02.jpg",
           tags: [0, 1]
         },
         {

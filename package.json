@@ -15,7 +15,6 @@
   "author": "Kyle Weintraub",
   "license": "MIT",
   "dependencies": {
-    "aws": "0.0.3-2",
     "aws-sdk": "^2.212.1",
     "body-parser": "^1.18.2",
     "connect-multiparty": "^2.1.0",

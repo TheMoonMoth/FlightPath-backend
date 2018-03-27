@@ -53,18 +53,18 @@ app.post("/upload", upload.array("image", 1), (req, res) => {
   res
     .json({
       imageurl: `${req.files[0].location}`
-    })
+  })
 });
 
-app.post("/submission", (req, res)=>{
-  console.log(req.body)
+app.post("/submission", (req, res) => {
+  console.log(req.body);
   queries
     .createSubmission(req.body)
     .then(sub => {
       res.json(sub);
     })
     .catch(console.error);
-})
+});
 
 app.get("/featured", (req, res) => {
   queries
@@ -72,7 +72,7 @@ app.get("/featured", (req, res) => {
     .then(features => {
       res.json(features);
     })
-    .catch(console.error);
+    .catch(console.err);
 });
 
 app.get("/poetry", (req, res) => {
@@ -109,50 +109,6 @@ app.get("/all-submissions/:type", (req, res) => {
   queries
     .listSubmissionsByType(req.params.type)
     .then(subs => res.json(subs))
-    .catch(console.error);
-});
-
-app.get("/xxx/:id", (request, response) => {
-  queries
-    .read(request.params.id)
-    .then(game => {
-      game
-        ? response.json({
-            game
-          })
-        : response.sendStatus(404);
-    })
-    .catch(console.error);
-});
-
-app.post("/xxx", (request, response) => {
-  queries
-    .create(request.body)
-    .then(game => {
-      response.sendStatus(201).json({
-        game
-      });
-    })
-    .catch(console.error);
-});
-
-app.delete("/xxx/:id", (request, response) => {
-  queries
-    .delete(request.params.id)
-    .then(() => {
-      response.sendStatus(204);
-    })
-    .catch(console.error);
-});
-
-app.put("/xxx/:id", (request, response) => {
-  queries
-    .update(request.params.id, request.body)
-    .then(game => {
-      response.json({
-        game
-      });
-    })
     .catch(console.error);
 });
 
