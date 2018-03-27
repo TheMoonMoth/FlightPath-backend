@@ -27,12 +27,14 @@ const upload = multer({
   fileFilter: function(req, file, cb) {
     let ext = path.win32.extname(file.originalname);
     if (
-      ext !== ".pdf" && 
-      ext !== ".doc" && 
-      ext !== ".docx" && 
-      ext !== ".png" && 
-      ext !== ".jpg" && 
-      ext !== ".jpeg"
+      ext !== ".pdf" &&
+      ext !== ".PDF" &&
+      ext !== ".jpg" &&
+      ext !== ".JPG" &&
+      ext !== ".png" &&
+      ext !== ".PNG" &&
+      ext !== ".jpeg" &&
+      ext !== ".JPEG" 
     ) {
       return cb(new Error("Unacceptable File Type"));
     }
