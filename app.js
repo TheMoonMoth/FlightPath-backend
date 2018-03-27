@@ -4,17 +4,54 @@ const queries = require("./queries");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-// const multer = require("multer");
-// const multerS3 = require("multer-s3")
+const path = require("path");
 
-// const AWS = require("aws-sdk");
-// const accessKeyId = process.env.AWS_ACCESS_KEY;
-// const secretAccessKey = process.env.AWS_SECRET_KEY;
+const aws = require("aws-sdk");
+const multer = require("multer");
+const multerS3 = require("multer-s3");
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+const s3 = new aws.S3({
+  apiVersion: "2006-03-01",
+  region: "us-east-1",
+  credentials: {
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    accessKeyId: process.env.ACCESS_KEY_ID
+  }
+});
+
+const upload = multer({
+  fileFilter: function(req, file, cb) {
+    let ext = path.win32.extname(file.originalname);
+    if (
+      ext !== ".pdf" && 
+      ext !== ".doc" && 
+      ext !== ".docx" && 
+      ext !== ".png" && 
+      ext !== ".jpg" && 
+      ext !== ".jpeg"
+    ) {
+      return cb(new Error("Unacceptable File Type"));
+    }
+    cb(null, true);
+  },
+  storage: multerS3({
+    s3,
+    bucket: "space-lane-submissions",
+    key: (request, file, next) => {
+      next(null, `${Date.now()}_${file.originalname}`);
+    }
+  })
+});
+
+app.post("/upload", upload.array("image", 1), (req, res) => {
+  res.json({
+    imageurl: `${req.files[0].location}`
+  });
+});
 
 app.get("/featured", (req, res) => {
   queries
@@ -48,19 +85,19 @@ app.get("/visualart", (req, res) => {
     .catch(console.error);
 });
 
-app.get("/all-submissions", (req, res)=>{
-  queries 
+app.get("/all-submissions", (req, res) => {
+  queries
     .listSubmissions()
     .then(subs => res.json(subs))
-    .catch(console.error)
-})
+    .catch(console.error);
+});
 
-app.get("/all-submissions/:type", (req, res)=>{
+app.get("/all-submissions/:type", (req, res) => {
   queries
     .listSubmissionsByType(req.params.type)
     .then(subs => res.json(subs))
-    .catch(console.error)
-})
+    .catch(console.error);
+});
 
 app.get("/xxx/:id", (request, response) => {
   queries
