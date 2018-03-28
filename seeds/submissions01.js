@@ -9,7 +9,7 @@ exports.seed = function(knex, Promise) {
           category: "Fiction",
           title: "A Tale of Escape",
           author: "Kyle Weintraub",
-          url: "@/../static/tester.pdf",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
@@ -20,7 +20,7 @@ exports.seed = function(knex, Promise) {
           category: "Fiction",
           title: "The New Britannica",
           author: "Kyle Weintraub",
-          url: "returns ON submission",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
@@ -31,7 +31,7 @@ exports.seed = function(knex, Promise) {
           category: "Fiction",
           title: "One Cozy Ship",
           author: "Kyle Weintraub",
-          url: "returns ON submission",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
@@ -42,7 +42,7 @@ exports.seed = function(knex, Promise) {
           category: "Poetry",
           title: "Ze Cozmas",
           author: "Pierre LaRoix",
-          url: "returns ON submission",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
@@ -53,7 +53,7 @@ exports.seed = function(knex, Promise) {
           category: "Poetry",
           title: "Martian Cigarette",
           author: "Pierre LaRoix",
-          url: "returns ON submission",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
@@ -64,7 +64,7 @@ exports.seed = function(knex, Promise) {
           category: "Poetry",
           title: "Grapes of Jupiter",
           author: "Pierre LaRoix",
-          url: "returns ON submission",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
@@ -75,7 +75,7 @@ exports.seed = function(knex, Promise) {
           category: "Art",
           title: "The Gateway",
           author: "Rob Boss",
-          url: "returns ON submission",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
@@ -86,7 +86,7 @@ exports.seed = function(knex, Promise) {
           category: "Art",
           title: "Happy Terreforms",
           author: "Rob Boss",
-          url: "returns ON submission",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
@@ -97,7 +97,7 @@ exports.seed = function(knex, Promise) {
           category: "Art",
           title: "Lonely Planet",
           author: "Rob Boss",
-          url: "returns ON submission",
+          url: "@/../static/resume.pdf",
           tags: [10, 9],
           cv:
             "Hello This is the CV portion of the submission. I wish you well and hope this finds you well. Best, Kyle"
