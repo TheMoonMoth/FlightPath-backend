@@ -10,6 +10,8 @@ const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE);
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -50,10 +52,9 @@ const upload = multer({
 });
 
 app.post("/upload", upload.array("image", 1), (req, res) => {
-  res
-    .json({
-      imageurl: `${req.files[0].location}`
-  })
+  res.json({
+    imageurl: `${req.files[0].location}`
+  });
 });
 
 app.post("/submission", (req, res) => {
@@ -64,6 +65,34 @@ app.post("/submission", (req, res) => {
       res.json({ sub });
     })
     .catch(console.error);
+});
+
+function charge(amount, service, token) {
+  return new Promise((resolve, reject) => {
+    stripe.charges.create(
+      {
+        amount: amount,
+        currency: "usd",
+        description: service,
+        source: token
+      },
+      (error, charge) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(charge);
+        }
+      }
+    );
+  });
+}
+
+app.post("/charge", (req, res) => {
+  charge(parseInt(request.body.amount) * 100, request.body.service, request.body.token)
+    .then(charge => {
+      response.json({ charge });
+    })
+    .catch(next);
 });
 
 app.get("/featured", (req, res) => {
