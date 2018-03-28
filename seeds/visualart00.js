@@ -8,15 +8,15 @@ exports.seed = function(knex, Promise) {
           title: "The Moon",
           artist: "Nick Gindraux",
           url:
-            "http://www.igorstshirts.com/blog/conceptships/2015/nick_gindraux/nick_gindraux_02.jpg",
+            "https://www.igorstshirts.com/blog/conceptships/2015/nick_gindraux/nick_gindraux_02.jpg",
           tags: [0, 1]
         },
         {
           id: 2,
-          title: "The Moon",
-          artist: "Nick Gindraux",
+          title: "Sky Temple",
+          artist: "Alyn Spiller",
           url:
-            "http://www.igorstshirts.com/blog/conceptships/2015/nick_gindraux/nick_gindraux_02.jpg",
+            "https://pre00.deviantart.net/52fd/th/pre/i/2017/160/b/9/sky_temple_by_alynspiller-dbc3wzh.jpg",
           tags: [0, 1]
         },
         {
