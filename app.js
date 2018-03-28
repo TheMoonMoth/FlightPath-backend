@@ -61,7 +61,7 @@ app.post("/submission", (req, res) => {
   queries
     .createSubmission(req.body)
     .then(sub => {
-      res.json(sub);
+      res.json({ sub });
     })
     .catch(console.error);
 });
