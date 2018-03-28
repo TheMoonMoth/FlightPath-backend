@@ -71,7 +71,7 @@ function charge(amount, service, token) {
   return new Promise((resolve, reject) => {
     stripe.charges.create(
       {
-        amount: amount,
+        amount: Number(amount),
         currency: "usd",
         description: service,
         source: token
@@ -87,7 +87,8 @@ function charge(amount, service, token) {
   });
 }
 
-app.post("/charge", (req, res) => {
+app.post("/charge", (request, response, next) => {
+  console.log(request.body)
   charge(parseInt(request.body.amount) * 100, request.body.service, request.body.token)
     .then(charge => {
       response.json({ charge });
